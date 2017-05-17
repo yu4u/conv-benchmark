@@ -1,7 +1,12 @@
-# conv-benchmark
+# Benchmarking different convolutions
+Evaluating efficiency of several types of convolutions.
+
+[Keras implementation](conv_keras.ipynb)
+
+[PyTorch implementation](conv_pytorch.ipynb)
 
 
-# Results
+## Results
 
 ### Keras CPU
 
@@ -58,3 +63,12 @@
 |processing time [sec]|0.096|0.173|0.169|1.717|0.230|0.985|
 |vs 3x3|0.416|0.752|0.733|7.460|1.000|4.280|
 |theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|
+
+
+## References
+
+C. Szegedy, V. Vanhoucke, S. Ioffe, J. Shlens, Z. Wojna, "Rethinking the Inception Architecture for Computer Vision," in Proc. of CVPR, 2016.
+
+A. G. Howard, M. Zhu, B. Chen, D. Kalenichenko, W. Wang, T. Weyand, M. Andreetto, and H. Adam, "MobileNets: Efficient Convolutional Neural Networks for Mobile Vision Applications," in arXiv:1704.04861, 2017.
+
+F. Chollet, "Xception: Deep Learning with Depthwise Separable Convolutions," in Proc. of CVPR, 2017.
