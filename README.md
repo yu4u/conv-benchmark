@@ -24,11 +24,11 @@ Evaluating efficiency of several types of convolutions.
 
 convs = ["conv1x1", "conv3x1", "conv1x3", "conv3x3sep", "conv3x3", "conv5x5", "conv3x3dilated"]
 
-print("||" + "|".join(convs) + "|")
-print("|:-:|:-:|:-:|:-:|:-:|:-:|:-:|")
-print("|processing time [sec]|" + "|".join(["{:0.3f}".format(results[n][-1]) for n in convs]) + "|")
-print("|vs 3x3|" + "|".join(["{:0.3f}".format(results[n][-1]/results["conv3x3"][-1]) for n in convs]) + "|")
-print("|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|")
+||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|processing time [sec]|1.248|1.422|1.515|1.490|1.594|2.851|2.088|
+|vs 3x3|0.783|0.892|0.951|0.935|1.000|1.789|1.310|
+|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|
 
 ### PyTorch CPU
 
