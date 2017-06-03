@@ -12,33 +12,31 @@ Evaluating efficiency of several types of convolutions.
 
 ![keras_cpu](results/keras_cpu.png)
 
-||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|processing time [sec]|6.693|14.083|14.022|7.197|43.729|118.820|
-|vs 3x3|0.153|0.322|0.321|0.165|1.000|2.717|
-|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|
+||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|processing time [sec]|6.736|14.133|14.043|7.184|43.700|118.898|49.442|
+|vs 3x3|0.154|0.323|0.321|0.164|1.000|2.721|1.131|
+|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|
 
 ### Keras GPU
 
 ![keras_gpu](results/keras_gpu.png)
 
-convs = ["conv1x1", "conv3x1", "conv1x3", "conv3x3sep", "conv3x3", "conv5x5", "conv3x3dilated"]
-
 ||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|processing time [sec]|1.248|1.422|1.515|1.490|1.594|2.851|2.088|
-|vs 3x3|0.783|0.892|0.951|0.935|1.000|1.789|1.310|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|processing time [sec]|1.135|1.525|1.440|1.556|1.571|2.848|2.008|
+|vs 3x3|0.722|0.971|0.916|0.990|1.000|1.812|1.278|
 |theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|
 
 ### PyTorch CPU
 
 ![pytorch_cpu](results/pytorch_cpu.png)
 
-||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|processing time [sec]|6.920|17.099|17.088|16.628|48.608|133.599|
-|vs 3x3|0.142|0.352|0.352|0.342|1.000|2.748|
-|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|
+||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|processing time [sec]|6.956|17.209|16.916|16.480|50.636|133.781|111.480|
+|vs 3x3|0.137|0.340|0.334|0.325|1.000|2.642|2.202|
+|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|
 
 ### PyTorch GPU
 
@@ -60,12 +58,11 @@ convs = ["conv1x1", "conv3x1", "conv1x3", "conv3x3sep", "conv3x3", "conv5x5", "c
 
 `cudnn.benchmark = True`, `cudnn.fastest = True`
 
-||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|
-|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
-|processing time [sec]|0.096|0.173|0.169|1.717|0.230|0.985|
-|vs 3x3|0.416|0.752|0.733|7.460|1.000|4.280|
-|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|
-
+||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|processing time [sec]|0.102|0.180|0.186|1.951|0.230|1.024|0.484|
+|vs 3x3|0.444|0.780|0.809|8.464|1.000|4.446|2.101|
+|theoretical complexity|0.111|0.333|0.333|0.016|1.000|2.778|1.000|
 
 ## References
 
