@@ -8,6 +8,15 @@ Evaluating efficiency of several types of convolutions.
 
 ## Results
 
+### Summary
+
+||conv1x1|conv3x1|conv1x3|conv3x3sep|conv3x3|conv5x5|conv3x3dilated|
+|:-:|:-:|:-:|:-:|:-:|:-:|:-:|:-:|
+|Keras CPU|6.736|14.133|14.043|7.184|43.700|118.898|49.442|
+|Keras GPU|1.135|1.525|1.440|1.556|1.571|2.848|2.008|
+|PyTorch CPU|6.956|17.209|16.916|16.480|50.636|133.781|111.480|
+|PyTorch GPU|0.102|0.180|0.186|1.951|0.230|1.024|0.484|
+
 ### Keras CPU
 
 ![keras_cpu](results/keras_cpu.png)
